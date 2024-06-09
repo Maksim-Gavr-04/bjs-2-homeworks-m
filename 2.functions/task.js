@@ -1,9 +1,6 @@
 // Задача 1:
 function getArrayParams(...arr) {
-  const sum = arr.reduce(
-    (accumulator, currentValue) => accumulator + currentValue, 
-    0,
-  );
+  const sum = arr.reduce((acc, item) => acc + item, 0);  
 
   let min = Math.min(...arr);
   let max = Math.max(...arr);
@@ -14,10 +11,7 @@ function getArrayParams(...arr) {
 
 // Задача 2:
 function summElementsWorker(...arr) {
-  const sum = arr.reduce(
-    (accumulator, currentValue) => accumulator + currentValue,
-    0,
-  );
+  const sum = arr.reduce((acc, item) => acc + item, 0);
 
   return sum;
 }
@@ -80,3 +74,42 @@ function makeWork (arrOfArr, func) {
 
   return maxWorkerResult;
 }
+
+// --------------------------------------НОВОЕ РЕШЕНИЕ-------------------------------------- \\
+
+/*function getArrayParams(...arr) {
+  return { 
+    min: Math.min(...arr), 
+    max: Math.max(...arr), 
+    avg: Number((arr.reduce((acc, item) => acc + item, 0) / arr.length).toFixed(2)) 
+  };
+}
+
+function summElementsWorker(...arr) {
+  return arr.reduce((acc, item) => acc + item, 0);
+}
+
+function differenceMaxMinWorker(...arr) {
+  return arr.length !== 0 ? Math.max(...arr) - Math.min(...arr) : 0;
+}
+
+function differenceEvenOddWorker(...arr) {
+  const sumOdds = arr.filter(item => item % 2 !== 0).reduce((acc, item) => acc + item, 0);
+  const sumEvens = arr.filter(item => item % 2 === 0).reduce((acc, item) => acc + item, 0);
+  return sumEvens - sumOdds;
+  // ИЛИ:
+  // const result = arr.reduce((acc, item) => {
+  //   return item % 2 === 0 ? { even: item + acc.even, odd: acc.odd } : { even: acc.even, odd: item + acc.odd } 
+  // }, { odd: 0, even: 0 });
+  // return result.even - result.odd;
+}
+
+function averageEvenElementsWorker(...arr) {
+  return arr.length !== 0 ? 
+  arr.filter(item => item % 2 === 0).reduce((acc, item, idx, filtetedArr) => acc + item / filtetedArr.length, 0) : 
+  0;
+}
+
+function makeWork (arrOfArr, func) {
+  return Math.max(...arrOfArr.map(arr => func(...arr)));
+}*/

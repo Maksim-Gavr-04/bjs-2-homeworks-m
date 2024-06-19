@@ -1,6 +1,7 @@
 ﻿// Задача 1 (Форматтер чисел):
 function parseCount(valueToParse) {
 	let resultOfParse = Number.parseFloat(valueToParse);
+  
   if (isNaN(resultOfParse)) {
 		throw new Error("Невалидное значение");
 	}

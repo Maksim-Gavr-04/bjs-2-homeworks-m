@@ -1,4 +1,4 @@
-﻿// Задача 1 (Форматтер чисел):
+// Задача 1 (Форматтер чисел):
 function parseCount(valueToParse) {
   let resultOfParse = Number.parseFloat(valueToParse);
   

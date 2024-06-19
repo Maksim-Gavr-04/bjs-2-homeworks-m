@@ -11,7 +11,7 @@
 
 ### Что нужно сделать
 
-Печатные издания бывают разных видов, но между всеми книгами, сборниками и журналами есть много общего: у всех них есть название, год издания, страницы, они могут повреждаться с процессе использования.
+Печатные издания бывают разных видов, но между всеми книгами, сборниками и журналами есть много общего: у всех них есть название, год издания, страницы, они могут повреждаться в процессе использования.
 
 1. Создайте базовый класс `PrintEditionItem` со свойствами:
 
@@ -40,7 +40,7 @@ const sherlock = new PrintEditionItem(
   1008
 );
 
- console.log(sherlock.releaseDate); //2019
+console.log(sherlock.releaseDate); //2019
 console.log(sherlock.state); //100
 sherlock.fix();
 console.log(sherlock.state); //100
@@ -112,7 +112,7 @@ library.addBook(
 library.addBook(new NovelBook("Герберт Уэллс", "Машина времени", 1895, 138));
 library.addBook(new Magazine("Мурзилка", 1924, 60));
 
- console.log(library.findBookBy("name", "Властелин колец")); //null
+console.log(library.findBookBy("name", "Властелин колец")); //null
 console.log(library.findBookBy("releaseDate", 1924).name); //"Мурзилка"
 
  console.log("Количество книг до выдачи: " + library.books.length); //Количество книг до выдачи: 4

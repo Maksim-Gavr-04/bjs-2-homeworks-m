@@ -118,15 +118,78 @@ class Student {
   }
 
   getAverage() {
-    let AllSubjects = Object.keys(this.marks);
-    if (AllSubjects.length === 0) {
+    let AllSubjectsNames = Object.keys(this.marks);
+    if (AllSubjectsNames.length === 0) {
       return 0;
     }
 
     let arrAverageMarks = [];
-    AllSubjects.reduce((acc, subject, idx, arr) => arrAverageMarks.push(this.getAverageBySubject(AllSubjects[acc])), 0);
+    AllSubjectsNames.reduce((acc) => arrAverageMarks.push(this.getAverageBySubject(AllSubjectsNames[acc])), 0);
     
-    let sumAverageMarks = arrAverageMarks.reduce((acc, mark, idx, arr) => acc + mark, 0);
-    return sumAverageMarks / AllSubjects.length;
+    let sumAverageMarks = arrAverageMarks.reduce((acc, mark) => acc + mark, 0);
+    return sumAverageMarks / AllSubjectsNames.length;
   }
 }
+
+// --------------------------------------НОВОЕ РЕШЕНИЕ ЗАДАЧ 2 И 3-------------------------------------- \\
+
+/*class Library {
+  books = []
+  constructor(name) {
+    this.name = name;
+  }
+
+  addBook(book) {
+    if (book.state > 30) {
+      this.books.push(book);
+    }
+  }
+
+  findBookBy(type, value) {
+    return this.books.find(book => book[type] === value) || null;
+  }
+
+  giveBookByName(bookName) {
+    let requestedBook = this.findBookBy("name", bookName);
+    if (requestedBook) {
+      this.books = this.books.filter(book => book !== requestedBook);
+      return requestedBook;
+    }
+
+    return null;
+  }  
+}
+
+class Student {
+  marks = {};
+  constructor(name) {
+    this.name = name;
+  }
+
+  addMark(mark, subjectName) {
+    if (mark < 2 || mark > 5) {
+      return;
+    }
+    
+    if (!this.marks[subjectName]) {
+      this.marks[subjectName] = [];
+    }
+    
+    this.marks[subjectName].push(mark);
+  }
+
+  getAverageBySubject(subjectName) {
+    let marksBySubject = this.marks[subjectName];
+    if (!marksBySubject) {
+      return 0;
+    }
+    
+    return marksBySubject.reduce((acc, mark) => acc + mark / marksBySubject.length, 0);
+  }
+
+  getAverage() {
+    let AllSubjectsNames = Object.keys(this.marks);
+    return AllSubjectsNames.reduce((acc, subjectName) => acc + this.getAverageBySubject(subjectName) / AllSubjectsNames.length, 0); // — этот код 
+    // сложит средние оценки по каждому предмету и получившуюся сумму поделит на количество всех предметов.
+  }
+}*/

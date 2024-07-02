@@ -31,7 +31,11 @@ class AlarmClock {
     let h = String(time.getHours()).padStart(2, "0");
     let m = String(time.getMinutes()).padStart(2, "0");
     return h + ':' + m;
+    // ИЛИ: 
     // return new Date().toLocaleTimeString("ru-RU").slice(0, -3);
+
+    // ИЛИ:
+    // return new Date().toLocaleTimeString("ru-RU", {hour: "2-digit", minute: "2-digit"});
   }
 
   start() {
@@ -40,8 +44,9 @@ class AlarmClock {
     }
 
     const startAlarm = () => {
+      const currentTime = this.getCurrentFormattedTime();
       this.alarmCollection.forEach(alarm => {
-        if (alarm.time === this.getCurrentFormattedTime() && alarm.canCall === true) {
+        if (alarm.time === currentTime && alarm.canCall === true) {
           alarm.canCall = false;
           alarm.callback();
         };

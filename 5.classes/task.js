@@ -1,4 +1,4 @@
-// Задача 1:
+// Задача 1 (Печатное издание):
 class PrintEditionItem {
   constructor(name, releaseDate, pagesCount) {
     this.name = name;
@@ -63,7 +63,7 @@ class DetectiveBook extends Book {
   }
 }
 
-// Задача 2:
+// Задача 2 (Библиотека):
 class Library {
   constructor(name, books = []) {
     this.name = name;
@@ -91,7 +91,7 @@ class Library {
   }  
 }
 
-// Задача 3:
+// Задача 3 (Журнал успеваемости):
 class Student {
   constructor(name) {
     this.name = name;

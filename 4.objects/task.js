@@ -1,3 +1,4 @@
+// Задача 1 (Инкапсуляция студента):
 function Student(name, gender, age) {
   this.name = name;
   this.gender = gender;

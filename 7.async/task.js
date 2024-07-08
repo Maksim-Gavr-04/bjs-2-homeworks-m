@@ -1,3 +1,4 @@
+// Задача 1 (Будильник-колыбельная):
 class AlarmClock {
   constructor() {
     this.alarmCollection = [];
@@ -33,7 +34,6 @@ class AlarmClock {
     return h + ':' + m;
     // ИЛИ: 
     // return new Date().toLocaleTimeString("ru-RU").slice(0, -3);
-
     // ИЛИ:
     // return new Date().toLocaleTimeString("ru-RU", {hour: "2-digit", minute: "2-digit"});
   }
